@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#07101d" />
+  <title>ONE / GATE — Portal Field Test</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main id="game">
+    <canvas id="view" aria-label="3D portal game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◉</span><div><strong>ONE / GATE</strong><small>FIELD TEST 07</small></div></div>
+      <div class="mission"><span class="status-dot"></span><span id="missionText">LOCATE THE RECEIVER</span></div>
+      <div class="core-counter"><span class="core-icon">✦</span><span id="coreCount">00</span><small>/ 03</small></div>
+    </header>
+    <div class="crosshair"><i></i><b></b></div>
+    <section class="objective" id="objective">
+      <span class="objective-kicker">CURRENT OBJECTIVE</span>
+      <strong id="objectiveText">Place your portal on the brass receiver</strong>
+      <span id="objectiveHint">Aim at the gold wall plate · press E</span>
+    </section>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <button class="place-button" id="placeButton"><span class="button-glyph">◎</span><span>PLACE PORTAL</span><kbd>E</kbd></button>
+    <div class="desktop-help" id="desktopHelp"><span>W A S D <i>MOVE</i></span><span>DRAG <i>LOOK</i></span><span>E <i>PLACE</i></span></div>
+    <div class="mobile-controls" id="mobileControls">
+      <div class="stick-zone" id="stickZone"><div class="stick-ring"><div class="stick-knob" id="stickKnob"></div></div><span>MOVE</span></div>
+      <div class="look-label">DRAG TO LOOK</div>
+    </div>
+    <div class="intro" id="intro">
+      <div class="intro-card">
+        <div class="intro-eyebrow"><span></span> APERTURE LABS · SIMULATION</div>
+        <h1>ONE<br><em>GATE.</em></h1>
+        <p class="intro-lead">One portal you can place. One chance to get out.</p>
+        <div class="intro-rule"></div>
+        <div class="intro-brief"><span class="brief-icon">✦</span><p>Place your gate on the receiver plate. Cross the fixed cyan gate, recover all <b>3 memory cores</b>, then return to extraction.</p></div>
+        <button id="startButton" class="start-button">ENTER THE TEST CHAMBER <span>↗</span></button>
+        <div class="intro-foot"><span>WASD / TOUCH TO MOVE</span><span>DRAG TO LOOK</span></div>
+      </div>
+    </div>
+    <div class="win-screen hidden" id="winScreen">
+      <div class="win-card"><span class="win-symbol">✦</span><span class="objective-kicker">FIELD TEST COMPLETE</span><h2>YOU MADE<br><em>THE LOOP.</em></h2><p>All memory cores recovered. One gate was enough.</p><button id="restartButton" class="start-button">RUN IT AGAIN <span>↻</span></button></div>
+    </div>
+    <div class="loading" id="loading">CALIBRATING THE CHAMBER<span>···</span></div>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
